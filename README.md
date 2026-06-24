@@ -1,2 +1,2 @@
 # AUTOLUXE-HUB
-Autoluxe dealership website and DevOps
+Autoluxe car dealership website and DevOps
