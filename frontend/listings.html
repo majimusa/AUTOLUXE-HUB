@@ -383,6 +383,17 @@
       <p>www.autoluxehubng.com</p>
     </div>
   </footer>
+<script>
+  const API_URL = 'https://autoluxe-backend-sfj1.onrender.com'
 
+  fetch(`${API_URL}/api/cars`)
+    .then(res => res.json())
+    .then(cars => {
+      console.log('Cars loaded from live API:', cars)
+    })
+    .catch(err => {
+      console.log('API error:', err)
+    })
+</script>
 </body>
 </html>
