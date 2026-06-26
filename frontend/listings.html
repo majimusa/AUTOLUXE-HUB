@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Listings — AutoLuxe Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .listings-hero {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.95)),
+      url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600')
+      center/cover no-repeat;
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .listings-hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .listings-hero h1 span {
+      color: #C9A84C;
+    }
+
+    .listings-hero p {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .filter-bar {
+      background-color: #111;
+      border-bottom: 1px solid #222;
+      padding: 16px 60px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-bar span {
+      font-size: 12px;
+      color: #666;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-right: 8px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      background: transparent;
+      border: 1px solid #333;
+      color: #888;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: #C9A84C;
+      color: #C9A84C;
+    }
+
+    .listings-grid {
+      padding: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+      background-color: #0a0a0a;
+    }
+
+    .car-card {
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+
+    .car-card:hover {
+      border-color: #C9A84C;
+      transform: translateY(-4px);
+    }
+
+    .car-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .car-info {
+      padding: 20px;
+    }
+
+    .car-badge {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #CC0000;
+      margin-bottom: 6px;
+    }
+
+    .car-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .car-year {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    .car-specs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .spec {
+      font-size: 11px;
+      color: #666;
+      background: #1a1a1a;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid #2a2a2a;
+    }
+
+    .car-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: #C9A84C;
+      margin-bottom: 16px;
+    }
+
+    .car-price span {
+      font-size: 12px;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .enquire-btn {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      background-color: #CC0000;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .enquire-btn:hover {
+      background-color: #aa0000;
+    }
+
+    .sold-badge {
+      display: inline-block;
+      background: #333;
+      color: #666;
+      font-size: 10px;
+      padding: 2px 10px;
+      border-radius: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    📞 07061943671 &nbsp;|&nbsp; 08148861998 &nbsp;|&nbsp; autoluxehubng@gmail.com
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      <div class="logo-main">
+        <span class="red">AUTO</span><span class="gold">LUXE</span>
+      </div>
+      <div class="logo-sub">Hub &nbsp;·&nbsp; Drive Excellence, Own Luxury</div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Cars</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- LISTINGS HERO -->
+  <div class="listings-hero">
+    <h1>Our <span>Vehicle</span> Listings</h1>
+    <p>Premium cars available for immediate purchase or importation on order</p>
+  </div>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <span>Filter:</span>
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">SUV</button>
+    <button class="filter-btn">Sedan</button>
+    <button class="filter-btn">Truck</button>
+    <button class="filter-btn">Van</button>
+  </div>
+
+  <!-- CAR LISTINGS GRID -->
+  <div class="listings-grid">
+
+    <!-- Car 1 -->
+    <div class="car-card">
+      <img class="car-img"
+        src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=600"
+        alt="Mercedes GLE" />
+      <div class="car-info">
+        <div class="car-badge">Available Now</div>
+        <div class="car-name">Mercedes-Benz GLE 350</div>
+        <div class="car-year">2022 · Foreign Used</div>
+        <div class="car-specs">
+          <span class="spec">SUV</span>
+          <span class="spec">Automatic</span>
+          <span class="spec">Petrol</span>
+        </div>
+        <div class="car-price">₦85,000,000 <span>negotiable</span></div>
+        <a href="contact.html" class="enquire-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <!-- Car 2 -->
+    <div class="car-card">
+      <img class="car-img"
+        src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600"
+        alt="BMW X5" />
+      <div class="car-info">
+        <div class="car-badge">Available Now</div>
+        <div class="car-name">BMW X5 xDrive40i</div>
+        <div class="car-year">2021 · Foreign Used</div>
+        <div class="car-specs">
+          <span class="spec">SUV</span>
+          <span class="spec">Automatic</span>
+          <span class="spec">Petrol</span>
+        </div>
+        <div class="car-price">₦78,000,000 <span>negotiable</span></div>
+        <a href="contact.html" class="enquire-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <!-- Car 3 -->
+    <div class="car-card">
+      <img class="car-img"
+        src="https://images.unsplash.com/photo-1616422285623-13ff0162193c?w=600"
+        alt="Lexus LX" />
+      <div class="car-info">
+        <div class="car-badge">Available Now</div>
+        <div class="car-name">Lexus LX 600</div>
+        <div class="car-year">2023 · Brand New</div>
+        <div class="car-specs">
+          <span class="spec">SUV</span>
+          <span class="spec">Automatic</span>
+          <span class="spec">Petrol</span>
+        </div>
+        <div class="car-price">₦165,000,000 <span>negotiable</span></div>
+        <a href="contact.html" class="enquire-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <!-- Car 4 -->
+    <div class="car-card">
+      <img class="car-img"
+        src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600"
+        alt="Toyota Land Cruiser" />
+      <div class="car-info">
+        <div class="car-badge">Available Now</div>
+        <div class="car-name">Toyota Land Cruiser 300</div>
+        <div class="car-year">2022 · Foreign Used</div>
+        <div class="car-specs">
+          <span class="spec">SUV</span>
+          <span class="spec">Automatic</span>
+          <span class="spec">Diesel</span>
+        </div>
+        <div class="car-price">₦145,000,000 <span>negotiable</span></div>
+        <a href="contact.html" class="enquire-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <!-- Car 5 -->
+    <div class="car-card">
+      <img class="car-img"
+        src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600"
+        alt="Range Rover" />
+      <div class="car-info">
+        <div class="car-badge">Available Now</div>
+        <div class="car-name">Range Rover Autobiography</div>
+        <div class="car-year">2021 · Foreign Used</div>
+        <div class="car-specs">
+          <span class="spec">SUV</span>
+          <span class="spec">Automatic</span>
+          <span class="spec">Petrol</span>
+        </div>
+        <div class="car-price">₦195,000,000 <span>negotiable</span></div>
+        <a href="contact.html" class="enquire-btn">Enquire Now</a>
+      </div>
+    </div>
+
+    <!-- Car 6 -->
+    <div class="car-card">
+      <img class="car-img"
+        src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600"
+        alt="Porsche Cayenne" />
+      <div class="car-info">
+        <div class="car-badge">Available Now</div>
+        <div class="car-name">Porsche Cayenne S</div>
+        <div class="car-year">2022 · Foreign Used</div>
+        <div class="car-specs">
+          <span class="spec">SUV</span>
+          <span class="spec">Automatic</span>
+          <span class="spec">Petrol</span>
+        </div>
+        <div class="car-price">₦118,000,000 <span>negotiable</span></div>
+        <a href="contact.html" class="enquire-btn">Enquire Now</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACT STRIP -->
+  <div class="contact-strip">
+    <div>
+      <h3>Don't see what you're looking for?</h3>
+      <p>We source and import any vehicle on request. Call us today.</p>
+    </div>
+    <a href="contact.html" class="btn-white">Request a Vehicle</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>AutoLuxe Hub</h4>
+        <p>Drive Excellence, Own Luxury</p>
+        <p>RC: 8755259</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#">Vehicle Sales</a>
+        <a href="#">Vehicle Importation</a>
+        <a href="#">Vehicle Sourcing</a>
+        <a href="#">Trade-In</a>
+        <a href="#">Fleet Supply</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>142 Road 1st Avenue</p>
+        <p>Gwarinpa, Abuja</p>
+        <p>07061943671</p>
+        <p>08148861998</p>
+        <p>autoluxehubng@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="listings.html">Car Listings</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AutoLuxe Hub. All rights reserved.</p>
+      <p>www.autoluxehubng.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us — AutoLuxe Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-hero {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.95)),
+      url('https://images.unsplash.com/photo-1486006920555-c77dcf18193c?w=1600')
+      center/cover no-repeat;
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .contact-hero h1 span {
+      color: #C9A84C;
+    }
+
+    .contact-hero p {
+      color: #888;
+      font-size: 15px;
+    }
+
+    .contact-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background-color: #0a0a0a;
+    }
+
+    /* ── LEFT SIDE — INFO ── */
+    .contact-info {
+      padding: 60px;
+      background-color: #111;
+      border-right: 1px solid #222;
+    }
+
+    .contact-info h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .contact-info h2 span {
+      color: #C9A84C;
+    }
+
+    .contact-info p.intro {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .info-icon {
+      font-size: 20px;
+      margin-top: 2px;
+    }
+
+    .info-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #CC0000;
+      margin-bottom: 4px;
+    }
+
+    .info-value {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    .hours-grid {
+      margin-top: 40px;
+      border-top: 1px solid #222;
+      padding-top: 28px;
+    }
+
+    .hours-grid h3 {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #C9A84C;
+      margin-bottom: 16px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: #666;
+      padding: 8px 0;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .hours-row span:last-child {
+      color: #aaa;
+    }
+
+    /* ── RIGHT SIDE — FORM ── */
+    .contact-form {
+      padding: 60px;
+      background-color: #0a0a0a;
+    }
+
+    .contact-form h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .contact-form h2 span {
+      color: #C9A84C;
+    }
+
+    .contact-form p.intro {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background-color: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 2px;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: 'Segoe UI', sans-serif;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #C9A84C;
+    }
+
+    .form-group select option {
+      background-color: #111;
+    }
+
+    .form-group textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background-color: #CC0000;
+      color: #ffffff;
+      border: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background 0.3s;
+      margin-top: 8px;
+    }
+
+    .submit-btn:hover {
+      background-color: #aa0000;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: #444;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* ── MAP STRIP ── */
+    .map-strip {
+      background-color: #111;
+      border-top: 1px solid #222;
+      padding: 48px 60px;
+      text-align: center;
+    }
+
+    .map-strip h3 {
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .map-strip h3 span {
+      color: #C9A84C;
+    }
+
+    .map-strip p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .map-placeholder {
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 4px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+      font-size: 14px;
+      letter-spacing: 1px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .contact-body {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 40px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    📞 07061943671 &nbsp;|&nbsp; 08148861998 &nbsp;|&nbsp; autoluxehubng@gmail.com
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">
+      <div class="logo-main">
+        <span class="red">AUTO</span><span class="gold">LUXE</span>
+      </div>
+      <div class="logo-sub">Hub &nbsp;·&nbsp; Drive Excellence, Own Luxury</div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="listings.html">Cars</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="contact-hero">
+    <h1>Get In <span>Touch</span></h1>
+    <p>We are ready to help you find your perfect vehicle</p>
+  </div>
+
+  <!-- CONTACT BODY -->
+  <div class="contact-body">
+
+    <!-- LEFT — CONTACT INFO -->
+    <div class="contact-info">
+      <h2>Visit <span>AutoLuxe Hub</span></h2>
+      <p class="intro">Come see our vehicles in person or reach out by phone and email. Our team is ready to guide you through every step.</p>
+
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Address</div>
+          <div class="info-value">142 Road 1st Avenue<br/>Gwarinpa, Abuja</div>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label">Phone</div>
+          <div class="info-value">07061943671<br/>08148861998</div>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">✉️</div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-value">autoluxehubng@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">🌐</div>
+        <div>
+          <div class="info-label">Website</div>
+          <div class="info-value">www.autoluxehubng.com</div>
+        </div>
+      </div>
+
+      <div class="hours-grid">
+        <h3>Business Hours</h3>
+        <div class="hours-row">
+          <span>Monday — Friday</span>
+          <span>8:00am — 6:00pm</span>
+        </div>
+        <div class="hours-row">
+          <span>Saturday</span>
+          <span>9:00am — 5:00pm</span>
+        </div>
+        <div class="hours-row">
+          <span>Sunday</span>
+          <span>By Appointment</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — ENQUIRY FORM -->
+    <div class="contact-form">
+      <h2>Send an <span>Enquiry</span></h2>
+      <p class="intro">Fill in the form below and one of our agents will get back to you within 24 hours.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="John Doe" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="080XXXXXXXX" pattern="[0-9]+" inputmode="numeric" title="Numbers only" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@email.com" />
+      </div>
+
+      <div class="form-group">
+        <label>Service Interested In</label>
+        <select name="service">
+          <option value="">— Select a service —</option>
+          <option>Vehicle Purchase</option>
+          <option>Vehicle Importation</option>
+          <option>Vehicle Sourcing</option>
+          <option>Trade-In</option>
+          <option>Fleet Supply</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Vehicle of Interest</label>
+        <input type="text" placeholder="e.g. Toyota Land Cruiser 2022" />
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us more about what you are looking for..."></textarea>
+      </div>
+
+      <button class="submit-btn">Send Enquiry</button>
+      <p class="form-note">We respond within 24 hours on business days.</p>
+    </div>
+
+  </div>
+
+  <!-- MAP STRIP -->
+  <div class="map-strip">
+    <h3>Find Us in <span>Gwarinpa, Abuja</span></h3>
+    <p>142 Road 1st Avenue, Gwarinpa, Abuja</p>
+    <div class="map-placeholder">
+      🗺️ &nbsp; 142 Road 1st Avenue, Gwarinpa, Abuja
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-col">
+        <h4>AutoLuxe Hub</h4>
+        <p>Drive Excellence, Own Luxury</p>
+        <p>RC: 8755259</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#">Vehicle Sales</a>
+        <a href="#">Vehicle Importation</a>
+        <a href="#">Vehicle Sourcing</a>
+        <a href="#">Trade-In</a>
+        <a href="#">Fleet Supply</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>142 Road 1st Avenue</p>
+        <p>Gwarinpa, Abuja</p>
+        <p>07061943671</p>
+        <p>08148861998</p>
+        <p>autoluxehubng@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="listings.html">Car Listings</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 AutoLuxe Hub. All rights reserved.</p>
+      <p>www.autoluxehubng.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
