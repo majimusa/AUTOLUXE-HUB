@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "make": "Mercedes-Benz",
+    "model": "GLE 350",
+    "year": 2022,
+    "price": 85000000,
+    "type": "SUV",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "condition": "Foreign Used",
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1563720223185-11003d516935?w=600"
+  },
+  {
+    "id": 2,
+    "make": "BMW",
+    "model": "X5 xDrive40i",
+    "year": 2021,
+    "price": 78000000,
+    "type": "SUV",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "condition": "Foreign Used",
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600"
+  },
+  {
+    "id": 3,
+    "make": "Lexus",
+    "model": "LX 600",
+    "year": 2023,
+    "price": 165000000,
+    "type": "SUV",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "condition": "Brand New",
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1616422285623-13ff0162193c?w=600"
+  },
+  {
+    "id": 4,
+    "make": "Toyota",
+    "model": "Land Cruiser 300",
+    "year": 2022,
+    "price": 145000000,
+    "type": "SUV",
+    "transmission": "Automatic",
+    "fuel": "Diesel",
+    "condition": "Foreign Used",
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600"
+  },
+  {
+    "id": 5,
+    "make": "Range Rover",
+    "model": "Autobiography",
+    "year": 2021,
+    "price": 195000000,
+    "type": "SUV",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "condition": "Foreign Used",
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600"
+  },
+  {
+    "id": 6,
+    "make": "Porsche",
+    "model": "Cayenne S",
+    "year": 2022,
+    "price": 118000000,
+    "type": "SUV",
+    "transmission": "Automatic",
+    "fuel": "Petrol",
+    "condition": "Foreign Used",
+    "available": true,
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600"
+  }
+]
